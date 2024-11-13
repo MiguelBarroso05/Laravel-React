@@ -24,14 +24,13 @@ export default function Login() {
         setCurrentUser(data.user)
         setUserToken(data.token)
       })
-      .catch((error) => {
-          if (error.response) {
-            const finalErrors = Object.values(error.response.data.errors).reduce((accum, next) => [...accum, ...next], [])
-            setError({__html: finalErrors.join('<br>')})
-          }
-          console.error(error)
-        });
-      };
+    const finalErrors = Object.values(error.response.data.errors).reduce((accum, next) => [...accum, ...next], [])
+    setError({__html: finalErrors.join('<br>')})
+  }
+  console.error(error)
+}
+)
+;
 
 
 return (
